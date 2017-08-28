@@ -24,7 +24,7 @@ key_words = ("美乳", "情趣", "丝", "美足", "脚", "裸", "喷", "淫水",
 auto_exit = False
 
 # host
-host = "http://ns.postcc.us/"
+host = "https://t66y.com/"
 
 # 新时代的我们index
 xsd = host + "thread0806.php"
