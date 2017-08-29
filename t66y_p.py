@@ -26,11 +26,14 @@ auto_exit = False
 # host
 host = "https://t66y.com/"
 
-# 新时代的我们index
+# 列表页
 xsd = host + "thread0806.php"
 
 # page
 page = 1
+
+# fid 草榴网的旗帜fid=16
+fid = 8
 
 
 # 检查标题里是否含有关键字
@@ -80,7 +83,7 @@ def save_img(img_urls, title):
 
 print("程序开始运行")
 while True:
-    cs = {"fid": 8, "search": "", "page": page}
+    cs = {"fid": fid, "search": "", "page": page}
 
     try:
         r_html = requests.get(xsd, params=cs)

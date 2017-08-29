@@ -17,7 +17,7 @@ root_folder = "images"
 # 需要抓取的关键字帖子
 key_words = ("美乳", "情趣", "丝", "美足", "脚", "裸", "喷", "淫水")
 
-# 轮询时长间隔
+# 轮询时长间隔(单位秒)
 sleep = 60
 
 # host
@@ -118,6 +118,7 @@ while True:
             save_img(img_urls, title)
 
     # 休息一段时间后再来查询
+    print("获取到的帖子标题：{title}".format(title=title))
     print("未检测到更新，一段时间后重新检测")
 
     time.sleep(sleep)
