@@ -7,8 +7,8 @@ import requests, re, json
 '''
 爬取重庆机电学院学生的成绩
 '''
-username = "12607201****"  # 学号
-passworld = "cppo****"  # 登陆密码
+username = "1260720191693"  # 学号
+passworld = "lengyue123"  # 登陆密码
 
 url = "http://i.cqevi.net.cn/zfca/login"
 session = requests.session()
@@ -55,3 +55,4 @@ if "欢迎" in r.text:
 
 # 登出账号
 session.get("http://i.cqevi.net.cn/zfca/logout")
+input("按回车退出")
