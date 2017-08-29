@@ -1,193 +1,266 @@
-﻿# 欢迎使用 Cmd Markdown 编辑阅读器
+﻿Welcome to StackEdit!
+=
 
-----
 
-我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，**Cmd Markdown** 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：
+Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
 
-> * 整理知识，学习笔记
-> * 发布日记，杂文，所见所想
-> * 撰写发布技术文稿（代码支持）
-> * 撰写发布学术论文（LaTeX 公式支持）
+----------
 
-![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
 
-除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：
+Documents
+-------------
 
-### [Windows/Mac/Linux 全平台客户端](https://www.zybuluo.com/cmd/)
+StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
 
-> 请保留此份 Cmd Markdown 的欢迎稿兼使用说明，如需撰写新稿件，点击顶部工具栏右侧的 <i class="icon-file"></i> **新文稿** 或者使用快捷键 `Ctrl+Alt+N`。
+> **Note:**
 
-------
+> - StackEdit is accessible offline after the application has been loaded for the first time.
+> - Your local documents are not shared between different browsers or computers.
+> - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class="icon-refresh"></i> Synchronization](#synchronization) section).
 
-## 什么是 Markdown
+#### <i class="icon-file"></i> Create a document
 
-Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，**粗体** 或者 *斜体* 某些文字，更棒的是，它还可以
+The document panel is accessible using the <i class="icon-folder-open"></i> button in the navigation bar. You can create a new document by clicking <i class="icon-file"></i> **New document** in the document panel.
 
-### 1. 制作一份待办事宜 [Todo 列表](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#13-待办事宜-todo-列表)
+#### <i class="icon-folder-open"></i> Switch to another document
 
-- [ ] 支持以 PDF 格式导出文稿
-- [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
-- [x] 新增 Todo 列表功能
-- [x] 修复 LaTex 公式渲染问题
-- [x] 新增 LaTex 公式编号功能
+All your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.
 
-### 2. 书写一个质能守恒公式[^LaTeX]
+#### <i class="icon-pencil"></i> Rename a document
 
-$$E=mc^2$$
+You can rename the current document by clicking the document title in the navigation bar.
 
-### 3. 高亮一段代码[^code]
+#### <i class="icon-trash"></i> Delete a document
 
-```python
-@requires_authorization
-class SomeClass:
-    pass
+You can delete the current document by clicking <i class="icon-trash"></i> **Delete document** in the document panel.
 
-if __name__ == '__main__':
-    # A comment
-    print 'hello world'
+#### <i class="icon-hdd"></i> Export a document
+
+You can save the current document to a file by clicking <i class="icon-hdd"></i> **Export to disk** from the <i class="icon-provider-stackedit"></i> menu panel.
+
+> **Tip:** Check out the [<i class="icon-upload"></i> Publish a document](#publish-a-document) section for a description of the different output formats.
+
+
+----------
+
+
+Synchronization
+-------------------
+
+StackEdit can be combined with <i class="icon-provider-gdrive"></i> **Google Drive** and <i class="icon-provider-dropbox"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.
+
+> **Note:**
+
+> - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.
+> - Imported documents are downloaded in your browser and are not transmitted to a server.
+> - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.
+
+#### <i class="icon-refresh"></i> Open a document
+
+You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive** or the <i class="icon-provider-dropbox"></i> **Dropbox** by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.
+
+#### <i class="icon-refresh"></i> Save a document
+
+You can save any document by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.
+
+#### <i class="icon-refresh"></i> Synchronize a document
+
+Once your document is linked to a <i class="icon-provider-gdrive"></i> **Google Drive** or a <i class="icon-provider-dropbox"></i> **Dropbox** file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.
+
+If you just have modified your document and you want to force the synchronization, click the <i class="icon-refresh"></i> button in the navigation bar.
+
+> **Note:** The <i class="icon-refresh"></i> button is disabled when you have no document to synchronize.
+
+#### <i class="icon-refresh"></i> Manage document synchronization
+
+Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class="icon-refresh"></i> **Manage synchronization** in the <i class="icon-refresh"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.
+
+> **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.
+
+----------
+
+
+Publication
+-------------
+
+Once you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.
+
+#### <i class="icon-upload"></i> Publish a document
+
+You can publish your document by opening the <i class="icon-upload"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:
+
+- Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),
+- HTML, to publish the document converted into HTML (on a blog for example),
+- Template, to have a full control of the output.
+
+> **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class="icon-cog"></i> **Settings** dialog.
+
+#### <i class="icon-upload"></i> Update a publication
+
+After publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class="icon-upload"></i> button in the navigation bar.
+
+> **Note:** The <i class="icon-upload"></i> button is disabled when your document has not been published yet.
+
+#### <i class="icon-upload"></i> Manage document publication
+
+Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class="icon-upload"></i> **Manage publication** in the <i class="icon-provider-stackedit"></i> menu panel. This will let you remove publication locations that are associated to your document.
+
+> **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.
+
+----------
+
+
+Markdown Extra
+--------------------
+
+StackEdit supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.
+
+> **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class="icon-cog"></i> **Settings** dialog.
+
+> **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].
+
+
+### Tables
+
+**Markdown Extra** has a special syntax for tables:
+
+Item     | Value
+-------- | ---
+Computer | $1600
+Phone    | $12
+Pipe     | $1
+
+You can specify column alignment with one or two colons:
+
+| Item     | Value | Qty   |
+| :------- | ----: | :---: |
+| Computer | $1600 |  5    |
+| Phone    | $12   |  12   |
+| Pipe     | $1    |  234  |
+
+
+### Definition Lists
+
+**Markdown Extra** has a special syntax for definition lists too:
+
+Term 1
+Term 2
+:   Definition A
+:   Definition B
+
+Term 3
+
+:   Definition C
+
+:   Definition D
+
+	> part of definition D
+
+
+### Fenced code blocks
+
+GitHub's fenced code blocks are also supported with **Highlight.js** syntax highlighting:
+
+```
+// Foo
+var bar = 0;
 ```
 
-### 4. 高效绘制 [流程图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-流程图)
+> **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class="icon-cog"></i> **Settings** dialog.
+
+> **Note:** You can find more information:
+
+> - about **Prettify** syntax highlighting [here][5],
+> - about **Highlight.js** syntax highlighting [here][6].
+
+
+### Footnotes
+
+You can create footnotes like this[^footnote].
+
+  [^footnote]: Here is the *text* of the **footnote**.
+
+
+### SmartyPants
+
+SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
+
+|                  | ASCII                        | HTML              |
+ ----------------- | ---------------------------- | ------------------
+| Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |
+| Quotes           | `"Isn't this fun?"`            | "Isn't this fun?" |
+| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |
+
+
+### Table of contents
+
+You can insert a table of contents using the marker `[TOC]`:
+
+[TOC]
+
+
+### MathJax
+
+You can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:
+
+The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
+
+$$
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+$$
+
+> **Tip:** To make sure mathematical expressions are rendered properly on your website, include **MathJax** into your template:
+
+```
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+```
+
+> **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].
+
+
+### UML diagrams
+
+You can also render sequence diagrams like this:
+
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+
+And flow charts like this:
 
 ```flow
 st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
 e=>end
+op=>operation: My Operation
+cond=>condition: Yes or No?
 
 st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
 
-### 5. 高效绘制 [序列图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-序列图)
+> **Note:** You can find more information:
 
-```seq
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
+> - about **Sequence diagrams** syntax [here][7],
+> - about **Flow charts** syntax [here][8].
 
-### 6. 高效绘制 [甘特图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#9-甘特图)
+### Support StackEdit
 
-```gantt
-    title 项目开发流程
-    section 项目确定
-        需求分析       :a1, 2016-06-22, 3d
-        可行性报告     :after a1, 5d
-        概念验证       : 5d
-    section 项目实施
-        概要设计      :2016-07-05  , 5d
-        详细设计      :2016-07-08, 10d
-        编码          :2016-07-15, 10d
-        测试          :2016-07-22, 5d
-    section 发布验收
-        发布: 2d
-        验收: 3d
-```
+[![](https://cdn.monetizejs.com/resources/button-32.png)]
 
-### 7. 绘制表格
 
-| 项目        | 价格   |  数量  |
-| --------   | -----:  | :----:  |
-| 计算机     | \$1600 |   5     |
-| 手机        |   \$12   |   12   |
-| 管线        |    \$1    |  234  |
+(https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)
 
-### 8. 更详细语法说明
+  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
-想要查看更详细的语法说明，可以参考我们准备的 [Cmd Markdown 简明语法手册][1]，进阶用户可以参考 [Cmd Markdown 高阶语法手册][2] 了解更多高级功能。
 
-总而言之，不同于其它 *所见即所得* 的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。**Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。** 目前它已经成为世界上最大的技术分享网站 GitHub 和 技术问答网站 StackOverFlow 的御用书写格式。
-
----
-
-## 什么是 Cmd Markdown
-
-您可以使用很多工具书写 Markdown，但是 Cmd Markdown 是这个星球上我们已知的、最好的 Markdown 工具——没有之一 ：）因为深信文字的力量，所以我们和你一样，对流畅书写，分享思想和知识，以及阅读体验有极致的追求，我们把对于这些诉求的回应整合在 Cmd Markdown，并且一次，两次，三次，乃至无数次地提升这个工具的体验，最终将它演化成一个 **编辑/发布/阅读** Markdown 的在线平台——您可以在任何地方，任何系统/设备上管理这里的文字。
-
-### 1. 实时同步预览
-
-我们将 Cmd Markdown 的主界面一分为二，左边为**编辑区**，右边为**预览区**，在编辑区的操作会实时地渲染到预览区方便查看最终的版面效果，并且如果你在其中一个区拖动滚动条，我们有一个巧妙的算法把另一个区的滚动条同步到等价的位置，超酷！
-
-### 2. 编辑工具栏
-
-也许您还是一个 Markdown 语法的新手，在您完全熟悉它之前，我们在 **编辑区** 的顶部放置了一个如下图所示的工具栏，您可以使用鼠标在工具栏上调整格式，不过我们仍旧鼓励你使用键盘标记格式，提高书写的流畅度。
-
-![tool-editor](https://www.zybuluo.com/static/img/toolbar-editor.png)
-
-### 3. 编辑模式
-
-完全心无旁骛的方式编辑文字：点击 **编辑工具栏** 最右侧的拉伸按钮或者按下 `Ctrl + M`，将 Cmd Markdown 切换到独立的编辑模式，这是一个极度简洁的写作环境，所有可能会引起分心的元素都已经被挪除，超清爽！
-
-### 4. 实时的云端文稿
-
-为了保障数据安全，Cmd Markdown 会将您每一次击键的内容保存至云端，同时在 **编辑工具栏** 的最右侧提示 `已保存` 的字样。无需担心浏览器崩溃，机器掉电或者地震，海啸——在编辑的过程中随时关闭浏览器或者机器，下一次回到 Cmd Markdown 的时候继续写作。
-
-### 5. 离线模式
-
-在网络环境不稳定的情况下记录文字一样很安全！在您写作的时候，如果电脑突然失去网络连接，Cmd Markdown 会智能切换至离线模式，将您后续键入的文字保存在本地，直到网络恢复再将他们传送至云端，即使在网络恢复前关闭浏览器或者电脑，一样没有问题，等到下次开启 Cmd Markdown 的时候，她会提醒您将离线保存的文字传送至云端。简而言之，我们尽最大的努力保障您文字的安全。
-
-### 6. 管理工具栏
-
-为了便于管理您的文稿，在 **预览区** 的顶部放置了如下所示的 **管理工具栏**：
-
-![tool-manager](https://www.zybuluo.com/static/img/toolbar-manager.jpg)
-
-通过管理工具栏可以：
-
-<i class="icon-share"></i> 发布：将当前的文稿生成固定链接，在网络上发布，分享
-<i class="icon-file"></i> 新建：开始撰写一篇新的文稿
-<i class="icon-trash"></i> 删除：删除当前的文稿
-<i class="icon-cloud"></i> 导出：将当前的文稿转化为 Markdown 文本或者 Html 格式，并导出到本地
-<i class="icon-reorder"></i> 列表：所有新增和过往的文稿都可以在这里查看、操作
-<i class="icon-pencil"></i> 模式：切换 普通/Vim/Emacs 编辑模式
-
-### 7. 阅读工具栏
-
-![tool-manager](https://www.zybuluo.com/static/img/toolbar-reader.jpg)
-
-通过 **预览区** 右上角的 **阅读工具栏**，可以查看当前文稿的目录并增强阅读体验。
-
-工具栏上的五个图标依次为：
-
-<i class="icon-list"></i> 目录：快速导航当前文稿的目录结构以跳转到感兴趣的段落
-<i class="icon-chevron-sign-left"></i> 视图：互换左边编辑区和右边预览区的位置
-<i class="icon-adjust"></i> 主题：内置了黑白两种模式的主题，试试 **黑色主题**，超炫！
-<i class="icon-desktop"></i> 阅读：心无旁骛的阅读模式提供超一流的阅读体验
-<i class="icon-fullscreen"></i> 全屏：简洁，简洁，再简洁，一个完全沉浸式的写作和阅读环境
-
-### 8. 阅读模式
-
-在 **阅读工具栏** 点击 <i class="icon-desktop"></i> 或者按下 `Ctrl+Alt+M` 随即进入独立的阅读模式界面，我们在版面渲染上的每一个细节：字体，字号，行间距，前背景色都倾注了大量的时间，努力提升阅读的体验和品质。
-
-### 9. 标签、分类和搜索
-
-在编辑区任意行首位置输入以下格式的文字可以标签当前文档：
-
-标签： 未分类
-
-标签以后的文稿在【文件列表】（Ctrl+Alt+F）里会按照标签分类，用户可以同时使用键盘或者鼠标浏览查看，或者在【文件列表】的搜索文本框内搜索标题关键字过滤文稿，如下图所示：
-
-![file-list](https://www.zybuluo.com/static/img/file-list.png)
-
-### 10. 文稿发布和分享
-
-在您使用 Cmd Markdown 记录，创作，整理，阅读文稿的同时，我们不仅希望它是一个有力的工具，更希望您的思想和知识通过这个平台，连同优质的阅读体验，将他们分享给有相同志趣的人，进而鼓励更多的人来到这里记录分享他们的思想和知识，尝试点击 <i class="icon-share"></i> (Ctrl+Alt+P) 发布这份文档给好友吧！
-
-------
-
-再一次感谢您花费时间阅读这份欢迎稿，点击 <i class="icon-file"></i> (Ctrl+Alt+N) 开始撰写新的文稿吧！祝您在这里记录、阅读、分享愉快！
-
-作者 [@ghosert][3]     
-2016 年 07月 07日    
-
-[^LaTeX]: 支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
-
-[^code]: 代码高亮功能支持包括 Java, Python, JavaScript 在内的，**四十一**种主流编程语言。
-
-[1]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown
-[2]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册
-[3]: http://weibo.com/ghosert
-[4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-
+  [1]: http://math.stackexchange.com/
+  [2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
+  [3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
+  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+  [5]: https://code.google.com/p/google-code-prettify/
+  [6]: http://highlightjs.org/
+  [7]: http://bramp.github.io/js-sequence-diagrams/
+  [8]: http://adrai.github.io/flowchart.js/
