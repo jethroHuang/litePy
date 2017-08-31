@@ -52,6 +52,8 @@ if "欢迎" in r.text:
 
     for i in cj_list:
         print(i["kcmc"] + "：" + i["cj"])
+else:
+    print("登陆失败，请检查账号和网络")
 
 # 登出账号
 session.get("http://i.cqevi.net.cn/zfca/logout")
