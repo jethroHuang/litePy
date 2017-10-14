@@ -20,7 +20,7 @@ requests
 root_folder = "images"
 
 # 需要抓取的关键字帖子
-key_words = ("美乳", "情趣", "丝", "美足", "脚", "裸", "喷", "淫水", "恋体")
+key_words = ("美乳", "情趣", "丝", "美足", "脚", "裸", "喷", "淫水")
 
 # 是否在遇到已下载的帖子时退出程序
 auto_exit = False
@@ -38,7 +38,7 @@ page = 1
 fid = 8
 
 # 图片下载线程数
-thread_num = 6
+thread_num = 4
 
 
 class SaveImg_thread(Thread):

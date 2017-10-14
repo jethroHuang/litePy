@@ -8,6 +8,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.idea
+wallpaper/
 env/
 build/
 develop-eggs/
@@ -100,3 +102,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+test.py

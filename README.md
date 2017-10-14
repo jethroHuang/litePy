@@ -29,3 +29,15 @@
 
 > 第三方库依赖：requests<br/>
 > 适用于python3
+
+## blibli_wallpaper.py
+下载哔哩哔哩相簿中的热门插画
+> 第三方依赖: requests,win10toast<br/>
+> 适用于python3
+
+1. 脚本默认爬取前3页的热门插画
+2. 可通过修改脚本调整下载线程数(如果下载速度比你的带宽低,可通过多线程下载,利用好带宽)
+3. 不建议修改page_size参数,可能引发错误
+
+## ip.py
+获取设备ip
