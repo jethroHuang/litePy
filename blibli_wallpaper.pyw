@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-使脚本开机自启,每隔一定天数自动下载哔哩哔哩相簿中的热门插画
+使脚本开机自启,当日期得号数是5的倍数时,自动下载哔哩哔哩相簿中的热门插画
 默认间隔5天,获取宽度大于高度的图片(适合设置为电脑壁纸)
 依赖:request,win10toast
 '''
@@ -23,6 +23,9 @@ page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
 page_max = 3  # 最多读取3页插画
 gap = 5  # 间隔5天
+
+# other #
+jilu_path = os.path.join(img_path,"jilu.zz")
 
 
 def get_img_urls():
@@ -105,12 +108,12 @@ class DownImgThread(Thread):
 
 def checkBootCondition():
     '''
-
+    检查是否满足启动条件
     :return: True or False >>True表示满足条件
     '''
     current_day = time.localtime().tm_mday
 
-    if current_day % gap == 0:
+    if current_day % gap == 0 and current_day != get_jilu():
         return True
     else:
         return False
@@ -128,7 +131,22 @@ def toastInternetError():
     toaster = ToastNotifier()
     toaster.show_toast("网络错误", "无法连接网络,插画下载失败")
 
+def save_jilu():
+    # 保存最后一次下载插画时的号数
+    with open(jilu_path,'w') as file:
+        file.write(str(time.localtime().tm_mday))
+        file.close()
 
+def get_jilu():
+    # 读取最后一次下载插画时的号数
+    try:
+        with open(jilu_path,'r') as file:
+            jilu=file.read()
+            jilu=int(jilu)
+            file.close
+            return jilu
+    except:
+        return 0
 def run():
     queue = get_img_urls()  # 获取图片链接
     thread_list = []
@@ -143,11 +161,13 @@ def run():
     for t in thread_list:
         t.join()
 
+
+    save_jilu()
     toaster = ToastNotifier()
     toaster.show_toast("壁纸下载完成", '壁纸路径{}'.format(os.path.abspath(img_path)), duration=20)
 
-
 if __name__ == "__main__":
+
 
     # 如果存放图片的文件夹存在则表示已初始化
     if os.path.exists(img_path):
@@ -157,6 +177,7 @@ if __name__ == "__main__":
                 toastInternetError()  # 提示网络错误
                 os._exit(0)  # 退出程序
             # 如果满足则清空图片,然后启动下载程序下载壁纸
+
             for file in os.listdir(img_path):
                 os.remove(os.path.join(img_path, file))
             run()
