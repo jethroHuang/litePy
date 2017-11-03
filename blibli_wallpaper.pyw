@@ -21,8 +21,8 @@ category = 'illustration'  # 插画分类
 type = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
 page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
-page_max = 5  # 最多读取3页插画
-gap = 5  # 间隔5天
+page_max = 5  # 最多读取5页插画
+gap = 5  # 间隔5天下载一次
 
 # other #
 jilu_path = os.path.join(img_path,"jilu.zz")

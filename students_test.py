@@ -22,7 +22,7 @@ def xhyz(xh,y,n):
 y = open("xh.txt","a")
 n=open("xh_n.txt","a")
 try:
-    for i in range(1,10000):
+    for i in range(5000,10000):
         yum_head='126072020'
         yum_fout="%04d"%i
 
