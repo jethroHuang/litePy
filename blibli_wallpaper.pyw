@@ -21,7 +21,7 @@ category = 'illustration'  # 插画分类
 type = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
 page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
-page_max = 3  # 最多读取3页插画
+page_max = 5  # 最多读取3页插画
 gap = 5  # 间隔5天
 
 # other #
@@ -58,8 +58,8 @@ def get_img_urls():
                 except:
                     continue
 
-                # 如果宽度大于高度表示这是适合电脑壁纸
-                if img_width > img_height:
+                # 如果宽度大于高度表示这是适合电脑壁纸,并且宽度应大于1000保证清晰度
+                if img_width > img_height and img_width > 1000:
                     queue.put(img_src)
 
     # 发送请求得到包含图片url和图片信息的json
