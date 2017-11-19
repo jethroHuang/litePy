@@ -21,9 +21,9 @@ category = 'illustration'  # 插画分类
 type = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
 page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
-page_max = 5  # 最多读取5页插画
+wallpaper_max = 5  # 最多读取5页插画
 gap = 5  # 间隔5天下载一次
-
+width_max=1920 # 壁纸的最大宽度
 # other #
 jilu_path = os.path.join(img_path,"jilu.zz")
 
@@ -34,6 +34,7 @@ def get_img_urls():
     :return:
     '''
     queue = Queue()
+    flag=True
 
     def filter_url(result):
         '''
@@ -57,13 +58,17 @@ def get_img_urls():
                     img_src = img['img_src']
                 except:
                     continue
-
-                # 如果宽度大于高度表示这是适合电脑壁纸,并且宽度应大于1000保证清晰度
-                if img_width > img_height and img_width > 1000:
+                
+                # 如果宽度大于高度表示这是适合电脑壁纸,并且宽度应大于width_max保证清晰度
+                if img_width > img_height and img_width > width_max:
                     queue.put(img_src)
+                if queue.qsize() >= wallpaper_max:
+                    print("筛选完成")
+                    return False
 
     # 发送请求得到包含图片url和图片信息的json
-    for i in range(page_max):
+    i=0
+    while flag:
         canshu = {
             "category": category,
             "type": type,
@@ -73,10 +78,11 @@ def get_img_urls():
         try:
             result_json = requests.get("https://api.vc.bilibili.com/link_draw/v2/Doc/list", params=canshu).json()
             # 筛选出图片
-            filter_url(result_json)
+            flag = filter_url(result_json)
         except Exception as e:
             print(e)
             break
+        i=i+1
     return queue
 
 
@@ -148,7 +154,10 @@ def get_jilu():
     except:
         return 0
 def run():
+    print("开始获取图片链接...")
     queue = get_img_urls()  # 获取图片链接
+    print("图片链接获取完成")
+    print("开始下载图片...")
     thread_list = []
     for i in range(thread_num):
         thread = DownImgThread(queue)
@@ -188,3 +197,4 @@ if __name__ == "__main__":
             os._exit(0)  # 退出程序
         os.mkdir(img_path)
         run()
+    print("end")
