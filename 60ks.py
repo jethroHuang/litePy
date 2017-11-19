@@ -9,7 +9,6 @@ __author__ = 'JethroCup'
 '''
 import re
 import requests
-import os
 
 
 class DownXs():
@@ -27,7 +26,7 @@ class DownXs():
         try:
             title = re.findall(r'<div class="nr_title" id="nr_title">(.*?)</div>', html, re.S)[0]
             return title
-        except Exception:
+        except Exception: #当进入到最后一章时,再点击下一章按钮回进到目录页面,这个页面是没有id为nr_title的div的,所以当用re模块匹配的时候是匹配不到的,因此调用[0]取值时会报范围错误
             return None
 
     def get_html(self, url):
