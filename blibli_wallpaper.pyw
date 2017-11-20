@@ -23,7 +23,7 @@ page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
 wallpaper_max = 50  # 最多读取50张插画
 gap = 5  # 间隔5天下载一次
-width_max=1500 # 壁纸的最大宽度
+width_min=1500 # 壁纸的最小宽度
 # other #
 jilu_path = os.path.join(img_path,"jilu.zz")
 flag=True
@@ -61,8 +61,8 @@ def get_img_urls():
                 except:
                     continue
                 
-                # 如果宽度大于高度表示这是适合电脑壁纸,并且宽度应大于width_max保证清晰度
-                if img_width > img_height and img_width >= width_max:
+                # 如果宽度大于高度表示这是适合电脑壁纸,并且宽度应大于width_min保证清晰度
+                if img_width > img_height and img_width >= width_min:
                     queue.put(img_src)
                 if queue.qsize() >= wallpaper_max:
                     # 当图片数量达到要求数量时,停止获取下一页
