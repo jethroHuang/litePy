@@ -26,7 +26,7 @@ gap = 5  # 间隔5天下载一次
 width_max=1500 # 壁纸的最大宽度
 # other #
 jilu_path = os.path.join(img_path,"jilu.zz")
-
+flag=True
 
 def get_img_urls():
     '''
@@ -34,7 +34,6 @@ def get_img_urls():
     :return:
     '''
     queue = Queue()
-    flag=True
 
     def filter_url(result):
         '''
@@ -42,7 +41,10 @@ def get_img_urls():
         :param result: 获取到的数据,dict类型
         :return:
         '''
+
+        global flag
         if not result['message'] == 'success' and result['msg'] == "success":
+            flag=False
             return
 
         # 清洗出链接,要横屏
@@ -63,8 +65,10 @@ def get_img_urls():
                 if img_width > img_height and img_width >= width_max:
                     queue.put(img_src)
                 if queue.qsize() >= wallpaper_max:
-                    print("筛选完成")
-                    return False
+                    # 当图片数量达到要求数量时,停止获取下一页
+                    flag=False
+                    return
+        return
 
     # 发送请求得到包含图片url和图片信息的json
     i=0
@@ -78,7 +82,7 @@ def get_img_urls():
         try:
             result_json = requests.get("https://api.vc.bilibili.com/link_draw/v2/Doc/list", params=canshu).json()
             # 筛选出图片
-            flag = filter_url(result_json)
+            filter_url(result_json)
         except Exception as e:
             print(e)
             break
