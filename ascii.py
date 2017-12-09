@@ -15,7 +15,8 @@ WIDTH=args.width
 HEIGHT=args.height
 OUTPUT=args.output
 
-ascii_char=list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
+#ascii_char=list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
+ascii_char=list("$@B%8&W$@B%8&WkbdpqwmZO0QLCJUkbdpqwmZO0QLCJUft/\|()1{}[]?-_+~<>i!li!lI;:,\"^`'i!lI;:,\"                                ")
 
 def get_char(r,g,b,alpha=256):
     if alpha == 0:

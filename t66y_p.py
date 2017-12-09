@@ -20,7 +20,7 @@ requests
 root_folder = "images"
 
 # 需要抓取的关键字帖子
-key_words = ("美乳", "情趣", "丝", "美足", "脚", "裸", "喷", "淫水")
+key_words = ("白丝","丝袜","黑丝")
 
 # 是否在遇到已下载的帖子时退出程序
 auto_exit = False
