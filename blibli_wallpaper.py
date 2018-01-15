@@ -17,13 +17,14 @@ import shutil
 # 配置选项 #
 img_path = 'wallpaper'  # 图片存放的位置,脚本所在文件下的wallpaper
 category = 'illustration'  # 插画分类
-type = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
+type_ = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
 page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
 wallpaper_max = 5  # 最多读取5页插画
 width_min=1920 # 壁纸的最小宽度
 # other #
 jilu_path = os.path.join(img_path,"jilu.zz")
+config_file = "config.json"
 
 def get_img_urls():
     '''
@@ -69,7 +70,7 @@ def get_img_urls():
     while flag:
         canshu = {
             "category": category,
-            "type": type,
+            "type_": type_,
             "page_num": i,
             "page_size": page_size
         }
@@ -88,7 +89,7 @@ class DownImgThread(Thread):
     def __init__(self, queue):
         Thread.__init__(self)
         if not isinstance(queue, Queue):
-            raise TypeError('请传入Queue对象')
+            raise type_Error('请传入Queue对象')
         self.queue = queue
 
     def run(self):
@@ -174,5 +175,15 @@ def main():
         os.mkdir(img_path)
         run()
         input()
+
+def main_():
+    #检查配置文件
+    if os.path.exists(config_file):
+        #载入配置
+        pass
+    else:
+        #初始化配置
+        pass
+    
 if __name__ == "__main__":
     main()

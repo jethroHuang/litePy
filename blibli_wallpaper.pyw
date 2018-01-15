@@ -18,7 +18,7 @@ import time
 # 配置选项 #
 img_path = 'wallpaper'  # 图片存放的位置,脚本所在文件下的wallpaper
 category = 'illustration'  # 插画分类
-type = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
+type_ = 'hot'  # 热门插画,如需获取最新壁纸,可改为'new'
 page_size = 20  # 每一页要获取的插画数量
 thread_num = 3  # 最多用3条线程下载图片
 wallpaper_max = 50  # 最多读取50张插画
@@ -75,7 +75,7 @@ def get_img_urls():
     while flag:
         canshu = {
             "category": category,
-            "type": type,
+            "type": type_,
             "page_num": i,
             "page_size": page_size
         }
