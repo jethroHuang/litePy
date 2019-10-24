@@ -70,7 +70,7 @@ def get_img_urls():
     while flag:
         canshu = {
             "category": category,
-            "type_": type_,
+            "type": type_,
             "page_num": i,
             "page_size": page_size
         }
